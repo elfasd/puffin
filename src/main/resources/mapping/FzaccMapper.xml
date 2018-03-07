@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.asd.puffin.modules.mapper.FzaccMapper">
+  <resultMap id="BaseResultMap" type="com.asd.puffin.modules.pojo.Fzacc">
+    <id column="accno" jdbcType="VARCHAR" property="accno" />
+    <result column="opttype" jdbcType="VARCHAR" property="opttype" />
+    <result column="acctype" jdbcType="VARCHAR" property="acctype" />
+    <result column="acckind" jdbcType="VARCHAR" property="acckind" />
+    <result column="comcode" jdbcType="CHAR" property="comcode" />
+    <result column="comname" jdbcType="VARCHAR" property="comname" />
+    <result column="insuredname" jdbcType="VARCHAR" property="insuredname" />
+    <result column="damagedate" jdbcType="DATE" property="damagedate" />
+    <result column="startdate" jdbcType="DATE" property="startdate" />
+    <result column="enddate" jdbcType="DATE" property="enddate" />
+    <result column="treatyid" jdbcType="VARCHAR" property="treatyid" />
+    <result column="sectionno" jdbcType="VARCHAR" property="sectionno" />
+    <result column="treatyname" jdbcType="VARCHAR" property="treatyname" />
+    <result column="treatytype" jdbcType="VARCHAR" property="treatytype" />
+    <result column="accperiod" jdbcType="VARCHAR" property="accperiod" />
+    <result column="repolicyno" jdbcType="VARCHAR" property="repolicyno" />
+    <result column="recertifyno" jdbcType="VARCHAR" property="recertifyno" />
+    <result column="drcertifyno" jdbcType="VARCHAR" property="drcertifyno" />
+    <result column="riskunitcode" jdbcType="VARCHAR" property="riskunitcode" />
+    <result column="yourref" jdbcType="VARCHAR" property="yourref" />
+    <result column="yourrep" jdbcType="VARCHAR" property="yourrep" />
+    <result column="facflag" jdbcType="VARCHAR" property="facflag" />
+    <result column="reinstype" jdbcType="VARCHAR" property="reinstype" />
+    <result column="reinscode" jdbcType="VARCHAR" property="reinscode" />
+    <result column="reinsname" jdbcType="VARCHAR" property="reinsname" />
+    <result column="paycode" jdbcType="VARCHAR" property="paycode" />
+    <result column="payname" jdbcType="VARCHAR" property="payname" />
+    <result column="uwyear" jdbcType="VARCHAR" property="uwyear" />
+    <result column="classcode" jdbcType="VARCHAR" property="classcode" />
+    <result column="riskcode" jdbcType="VARCHAR" property="riskcode" />
+    <result column="sharerate" jdbcType="DECIMAL" property="sharerate" />
+    <result column="currencyorig" jdbcType="VARCHAR" property="currencyorig" />
+    <result column="balanceorig" jdbcType="DECIMAL" property="balanceorig" />
+    <result column="exchrate" jdbcType="DECIMAL" property="exchrate" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="balance" jdbcType="DECIMAL" property="balance" />
+    <result column="osloss" jdbcType="DECIMAL" property="osloss" />
+    <result column="ibnr" jdbcType="DECIMAL" property="ibnr" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="sepeflag" jdbcType="VARCHAR" property="sepeflag" />
+    <result column="settletype" jdbcType="VARCHAR" property="settletype" />
+    <result column="makecomcode" jdbcType="VARCHAR" property="makecomcode" />
+    <result column="accdate" jdbcType="DATE" property="accdate" />
+    <result column="associateno" jdbcType="VARCHAR" property="associateno" />
+    <result column="creatercode" jdbcType="VARCHAR" property="creatercode" />
+    <result column="createcodename" jdbcType="VARCHAR" property="createcodename" />
+    <result column="createdate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="updatercode" jdbcType="VARCHAR" property="updatercode" />
+    <result column="updatedate" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="belongtype" jdbcType="VARCHAR" property="belongtype" />
+    <result column="businessflag" jdbcType="VARCHAR" property="businessflag" />
+    <result column="dealflag" jdbcType="VARCHAR" property="dealflag" />
+    <result column="ppw" jdbcType="VARCHAR" property="ppw" />
+    <result column="noduepremium" jdbcType="DECIMAL" property="noduepremium" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+    <result column="dmflag" jdbcType="VARCHAR" property="dmflag" />
+    <result column="createtimefordw" jdbcType="TIMESTAMP" property="createtimefordw" />
+    <result column="updatetimefordw" jdbcType="TIMESTAMP" property="updatetimefordw" />
+    <result column="noduepremiumcny" jdbcType="DECIMAL" property="noduepremiumcny" />
+    <result column="accpaytime" jdbcType="TIMESTAMP" property="accpaytime" />
+    <result column="outwardno" jdbcType="VARCHAR" property="outwardno" />
+    <result column="locationflag" jdbcType="VARCHAR" property="locationflag" />
+    <result column="brkvatcnyb" jdbcType="DECIMAL" property="brkvatcnyb" />
+    <result column="vatflag" jdbcType="VARCHAR" property="vatflag" />
+    <result column="vatexch" jdbcType="DECIMAL" property="vatexch" />
+    <result column="repremiumcny" jdbcType="DECIMAL" property="repremiumcny" />
+    <result column="vatcny" jdbcType="DECIMAL" property="vatcny" />
+    <result column="brkvatcny" jdbcType="DECIMAL" property="brkvatcny" />
+    <result column="vatcnyb" jdbcType="DECIMAL" property="vatcnyb" />
+    <result column="businesstype" jdbcType="VARCHAR" property="businesstype" />
+    <result column="sendercode" jdbcType="VARCHAR" property="sendercode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    accno, opttype, acctype, acckind, comcode, comname, insuredname, damagedate, startdate, 
+    enddate, treatyid, sectionno, treatyname, treatytype, accperiod, repolicyno, recertifyno, 
+    drcertifyno, riskunitcode, yourref, yourrep, facflag, reinstype, reinscode, reinsname, 
+    paycode, payname, uwyear, classcode, riskcode, sharerate, currencyorig, balanceorig, 
+    exchrate, currency, balance, osloss, ibnr, remarks, memo, sepeflag, settletype, makecomcode, 
+    accdate, associateno, creatercode, createcodename, createdate, updatercode, updatedate, 
+    belongtype, businessflag, dealflag, ppw, noduepremium, flag, dmflag, createtimefordw, 
+    updatetimefordw, noduepremiumcny, accpaytime, outwardno, locationflag, brkvatcnyb, 
+    vatflag, vatexch, repremiumcny, vatcny, brkvatcny, vatcnyb, businesstype, sendercode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from fzacc
+    where accno = #{accno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from fzacc
+    where accno = #{accno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.asd.puffin.modules.pojo.Fzacc">
+    insert into fzacc (accno, opttype, acctype, 
+      acckind, comcode, comname, 
+      insuredname, damagedate, startdate, 
+      enddate, treatyid, sectionno, 
+      treatyname, treatytype, accperiod, 
+      repolicyno, recertifyno, drcertifyno, 
+      riskunitcode, yourref, yourrep, 
+      facflag, reinstype, reinscode, 
+      reinsname, paycode, payname, 
+      uwyear, classcode, riskcode, 
+      sharerate, currencyorig, balanceorig, 
+      exchrate, currency, balance, 
+      osloss, ibnr, remarks, 
+      memo, sepeflag, settletype, 
+      makecomcode, accdate, associateno, 
+      creatercode, createcodename, createdate, 
+      updatercode, updatedate, belongtype, 
+      businessflag, dealflag, ppw, 
+      noduepremium, flag, dmflag, 
+      createtimefordw, updatetimefordw, noduepremiumcny, 
+      accpaytime, outwardno, locationflag, 
+      brkvatcnyb, vatflag, vatexch, 
+      repremiumcny, vatcny, brkvatcny, 
+      vatcnyb, businesstype, sendercode
+      )
+    values (#{accno,jdbcType=VARCHAR}, #{opttype,jdbcType=VARCHAR}, #{acctype,jdbcType=VARCHAR}, 
+      #{acckind,jdbcType=VARCHAR}, #{comcode,jdbcType=CHAR}, #{comname,jdbcType=VARCHAR}, 
+      #{insuredname,jdbcType=VARCHAR}, #{damagedate,jdbcType=DATE}, #{startdate,jdbcType=DATE}, 
+      #{enddate,jdbcType=DATE}, #{treatyid,jdbcType=VARCHAR}, #{sectionno,jdbcType=VARCHAR}, 
+      #{treatyname,jdbcType=VARCHAR}, #{treatytype,jdbcType=VARCHAR}, #{accperiod,jdbcType=VARCHAR}, 
+      #{repolicyno,jdbcType=VARCHAR}, #{recertifyno,jdbcType=VARCHAR}, #{drcertifyno,jdbcType=VARCHAR}, 
+      #{riskunitcode,jdbcType=VARCHAR}, #{yourref,jdbcType=VARCHAR}, #{yourrep,jdbcType=VARCHAR}, 
+      #{facflag,jdbcType=VARCHAR}, #{reinstype,jdbcType=VARCHAR}, #{reinscode,jdbcType=VARCHAR}, 
+      #{reinsname,jdbcType=VARCHAR}, #{paycode,jdbcType=VARCHAR}, #{payname,jdbcType=VARCHAR}, 
+      #{uwyear,jdbcType=VARCHAR}, #{classcode,jdbcType=VARCHAR}, #{riskcode,jdbcType=VARCHAR}, 
+      #{sharerate,jdbcType=DECIMAL}, #{currencyorig,jdbcType=VARCHAR}, #{balanceorig,jdbcType=DECIMAL}, 
+      #{exchrate,jdbcType=DECIMAL}, #{currency,jdbcType=VARCHAR}, #{balance,jdbcType=DECIMAL}, 
+      #{osloss,jdbcType=DECIMAL}, #{ibnr,jdbcType=DECIMAL}, #{remarks,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{sepeflag,jdbcType=VARCHAR}, #{settletype,jdbcType=VARCHAR}, 
+      #{makecomcode,jdbcType=VARCHAR}, #{accdate,jdbcType=DATE}, #{associateno,jdbcType=VARCHAR}, 
+      #{creatercode,jdbcType=VARCHAR}, #{createcodename,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{updatercode,jdbcType=VARCHAR}, #{updatedate,jdbcType=TIMESTAMP}, #{belongtype,jdbcType=VARCHAR}, 
+      #{businessflag,jdbcType=VARCHAR}, #{dealflag,jdbcType=VARCHAR}, #{ppw,jdbcType=VARCHAR}, 
+      #{noduepremium,jdbcType=DECIMAL}, #{flag,jdbcType=VARCHAR}, #{dmflag,jdbcType=VARCHAR}, 
+      #{createtimefordw,jdbcType=TIMESTAMP}, #{updatetimefordw,jdbcType=TIMESTAMP}, #{noduepremiumcny,jdbcType=DECIMAL}, 
+      #{accpaytime,jdbcType=TIMESTAMP}, #{outwardno,jdbcType=VARCHAR}, #{locationflag,jdbcType=VARCHAR}, 
+      #{brkvatcnyb,jdbcType=DECIMAL}, #{vatflag,jdbcType=VARCHAR}, #{vatexch,jdbcType=DECIMAL}, 
+      #{repremiumcny,jdbcType=DECIMAL}, #{vatcny,jdbcType=DECIMAL}, #{brkvatcny,jdbcType=DECIMAL}, 
+      #{vatcnyb,jdbcType=DECIMAL}, #{businesstype,jdbcType=VARCHAR}, #{sendercode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.asd.puffin.modules.pojo.Fzacc">
+    insert into fzacc
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accno != null">
+        accno,
+      </if>
+      <if test="opttype != null">
+        opttype,
+      </if>
+      <if test="acctype != null">
+        acctype,
+      </if>
+      <if test="acckind != null">
+        acckind,
+      </if>
+      <if test="comcode != null">
+        comcode,
+      </if>
+      <if test="comname != null">
+        comname,
+      </if>
+      <if test="insuredname != null">
+        insuredname,
+      </if>
+      <if test="damagedate != null">
+        damagedate,
+      </if>
+      <if test="startdate != null">
+        startdate,
+      </if>
+      <if test="enddate != null">
+        enddate,
+      </if>
+      <if test="treatyid != null">
+        treatyid,
+      </if>
+      <if test="sectionno != null">
+        sectionno,
+      </if>
+      <if test="treatyname != null">
+        treatyname,
+      </if>
+      <if test="treatytype != null">
+        treatytype,
+      </if>
+      <if test="accperiod != null">
+        accperiod,
+      </if>
+      <if test="repolicyno != null">
+        repolicyno,
+      </if>
+      <if test="recertifyno != null">
+        recertifyno,
+      </if>
+      <if test="drcertifyno != null">
+        drcertifyno,
+      </if>
+      <if test="riskunitcode != null">
+        riskunitcode,
+      </if>
+      <if test="yourref != null">
+        yourref,
+      </if>
+      <if test="yourrep != null">
+        yourrep,
+      </if>
+      <if test="facflag != null">
+        facflag,
+      </if>
+      <if test="reinstype != null">
+        reinstype,
+      </if>
+      <if test="reinscode != null">
+        reinscode,
+      </if>
+      <if test="reinsname != null">
+        reinsname,
+      </if>
+      <if test="paycode != null">
+        paycode,
+      </if>
+      <if test="payname != null">
+        payname,
+      </if>
+      <if test="uwyear != null">
+        uwyear,
+      </if>
+      <if test="classcode != null">
+        classcode,
+      </if>
+      <if test="riskcode != null">
+        riskcode,
+      </if>
+      <if test="sharerate != null">
+        sharerate,
+      </if>
+      <if test="currencyorig != null">
+        currencyorig,
+      </if>
+      <if test="balanceorig != null">
+        balanceorig,
+      </if>
+      <if test="exchrate != null">
+        exchrate,
+      </if>
+      <if test="currency != null">
+        currency,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
+      <if test="osloss != null">
+        osloss,
+      </if>
+      <if test="ibnr != null">
+        ibnr,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="memo != null">
+        memo,
+      </if>
+      <if test="sepeflag != null">
+        sepeflag,
+      </if>
+      <if test="settletype != null">
+        settletype,
+      </if>
+      <if test="makecomcode != null">
+        makecomcode,
+      </if>
+      <if test="accdate != null">
+        accdate,
+      </if>
+      <if test="associateno != null">
+        associateno,
+      </if>
+      <if test="creatercode != null">
+        creatercode,
+      </if>
+      <if test="createcodename != null">
+        createcodename,
+      </if>
+      <if test="createdate != null">
+        createdate,
+      </if>
+      <if test="updatercode != null">
+        updatercode,
+      </if>
+      <if test="updatedate != null">
+        updatedate,
+      </if>
+      <if test="belongtype != null">
+        belongtype,
+      </if>
+      <if test="businessflag != null">
+        businessflag,
+      </if>
+      <if test="dealflag != null">
+        dealflag,
+      </if>
+      <if test="ppw != null">
+        ppw,
+      </if>
+      <if test="noduepremium != null">
+        noduepremium,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+      <if test="dmflag != null">
+        dmflag,
+      </if>
+      <if test="createtimefordw != null">
+        createtimefordw,
+      </if>
+      <if test="updatetimefordw != null">
+        updatetimefordw,
+      </if>
+      <if test="noduepremiumcny != null">
+        noduepremiumcny,
+      </if>
+      <if test="accpaytime != null">
+        accpaytime,
+      </if>
+      <if test="outwardno != null">
+        outwardno,
+      </if>
+      <if test="locationflag != null">
+        locationflag,
+      </if>
+      <if test="brkvatcnyb != null">
+        brkvatcnyb,
+      </if>
+      <if test="vatflag != null">
+        vatflag,
+      </if>
+      <if test="vatexch != null">
+        vatexch,
+      </if>
+      <if test="repremiumcny != null">
+        repremiumcny,
+      </if>
+      <if test="vatcny != null">
+        vatcny,
+      </if>
+      <if test="brkvatcny != null">
+        brkvatcny,
+      </if>
+      <if test="vatcnyb != null">
+        vatcnyb,
+      </if>
+      <if test="businesstype != null">
+        businesstype,
+      </if>
+      <if test="sendercode != null">
+        sendercode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accno != null">
+        #{accno,jdbcType=VARCHAR},
+      </if>
+      <if test="opttype != null">
+        #{opttype,jdbcType=VARCHAR},
+      </if>
+      <if test="acctype != null">
+        #{acctype,jdbcType=VARCHAR},
+      </if>
+      <if test="acckind != null">
+        #{acckind,jdbcType=VARCHAR},
+      </if>
+      <if test="comcode != null">
+        #{comcode,jdbcType=CHAR},
+      </if>
+      <if test="comname != null">
+        #{comname,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredname != null">
+        #{insuredname,jdbcType=VARCHAR},
+      </if>
+      <if test="damagedate != null">
+        #{damagedate,jdbcType=DATE},
+      </if>
+      <if test="startdate != null">
+        #{startdate,jdbcType=DATE},
+      </if>
+      <if test="enddate != null">
+        #{enddate,jdbcType=DATE},
+      </if>
+      <if test="treatyid != null">
+        #{treatyid,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionno != null">
+        #{sectionno,jdbcType=VARCHAR},
+      </if>
+      <if test="treatyname != null">
+        #{treatyname,jdbcType=VARCHAR},
+      </if>
+      <if test="treatytype != null">
+        #{treatytype,jdbcType=VARCHAR},
+      </if>
+      <if test="accperiod != null">
+        #{accperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="repolicyno != null">
+        #{repolicyno,jdbcType=VARCHAR},
+      </if>
+      <if test="recertifyno != null">
+        #{recertifyno,jdbcType=VARCHAR},
+      </if>
+      <if test="drcertifyno != null">
+        #{drcertifyno,jdbcType=VARCHAR},
+      </if>
+      <if test="riskunitcode != null">
+        #{riskunitcode,jdbcType=VARCHAR},
+      </if>
+      <if test="yourref != null">
+        #{yourref,jdbcType=VARCHAR},
+      </if>
+      <if test="yourrep != null">
+        #{yourrep,jdbcType=VARCHAR},
+      </if>
+      <if test="facflag != null">
+        #{facflag,jdbcType=VARCHAR},
+      </if>
+      <if test="reinstype != null">
+        #{reinstype,jdbcType=VARCHAR},
+      </if>
+      <if test="reinscode != null">
+        #{reinscode,jdbcType=VARCHAR},
+      </if>
+      <if test="reinsname != null">
+        #{reinsname,jdbcType=VARCHAR},
+      </if>
+      <if test="paycode != null">
+        #{paycode,jdbcType=VARCHAR},
+      </if>
+      <if test="payname != null">
+        #{payname,jdbcType=VARCHAR},
+      </if>
+      <if test="uwyear != null">
+        #{uwyear,jdbcType=VARCHAR},
+      </if>
+      <if test="classcode != null">
+        #{classcode,jdbcType=VARCHAR},
+      </if>
+      <if test="riskcode != null">
+        #{riskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sharerate != null">
+        #{sharerate,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyorig != null">
+        #{currencyorig,jdbcType=VARCHAR},
+      </if>
+      <if test="balanceorig != null">
+        #{balanceorig,jdbcType=DECIMAL},
+      </if>
+      <if test="exchrate != null">
+        #{exchrate,jdbcType=DECIMAL},
+      </if>
+      <if test="currency != null">
+        #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DECIMAL},
+      </if>
+      <if test="osloss != null">
+        #{osloss,jdbcType=DECIMAL},
+      </if>
+      <if test="ibnr != null">
+        #{ibnr,jdbcType=DECIMAL},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="sepeflag != null">
+        #{sepeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="settletype != null">
+        #{settletype,jdbcType=VARCHAR},
+      </if>
+      <if test="makecomcode != null">
+        #{makecomcode,jdbcType=VARCHAR},
+      </if>
+      <if test="accdate != null">
+        #{accdate,jdbcType=DATE},
+      </if>
+      <if test="associateno != null">
+        #{associateno,jdbcType=VARCHAR},
+      </if>
+      <if test="creatercode != null">
+        #{creatercode,jdbcType=VARCHAR},
+      </if>
+      <if test="createcodename != null">
+        #{createcodename,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatercode != null">
+        #{updatercode,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="belongtype != null">
+        #{belongtype,jdbcType=VARCHAR},
+      </if>
+      <if test="businessflag != null">
+        #{businessflag,jdbcType=VARCHAR},
+      </if>
+      <if test="dealflag != null">
+        #{dealflag,jdbcType=VARCHAR},
+      </if>
+      <if test="ppw != null">
+        #{ppw,jdbcType=VARCHAR},
+      </if>
+      <if test="noduepremium != null">
+        #{noduepremium,jdbcType=DECIMAL},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="dmflag != null">
+        #{dmflag,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimefordw != null">
+        #{createtimefordw,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetimefordw != null">
+        #{updatetimefordw,jdbcType=TIMESTAMP},
+      </if>
+      <if test="noduepremiumcny != null">
+        #{noduepremiumcny,jdbcType=DECIMAL},
+      </if>
+      <if test="accpaytime != null">
+        #{accpaytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outwardno != null">
+        #{outwardno,jdbcType=VARCHAR},
+      </if>
+      <if test="locationflag != null">
+        #{locationflag,jdbcType=VARCHAR},
+      </if>
+      <if test="brkvatcnyb != null">
+        #{brkvatcnyb,jdbcType=DECIMAL},
+      </if>
+      <if test="vatflag != null">
+        #{vatflag,jdbcType=VARCHAR},
+      </if>
+      <if test="vatexch != null">
+        #{vatexch,jdbcType=DECIMAL},
+      </if>
+      <if test="repremiumcny != null">
+        #{repremiumcny,jdbcType=DECIMAL},
+      </if>
+      <if test="vatcny != null">
+        #{vatcny,jdbcType=DECIMAL},
+      </if>
+      <if test="brkvatcny != null">
+        #{brkvatcny,jdbcType=DECIMAL},
+      </if>
+      <if test="vatcnyb != null">
+        #{vatcnyb,jdbcType=DECIMAL},
+      </if>
+      <if test="businesstype != null">
+        #{businesstype,jdbcType=VARCHAR},
+      </if>
+      <if test="sendercode != null">
+        #{sendercode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.asd.puffin.modules.pojo.Fzacc">
+    update fzacc
+    <set>
+      <if test="opttype != null">
+        opttype = #{opttype,jdbcType=VARCHAR},
+      </if>
+      <if test="acctype != null">
+        acctype = #{acctype,jdbcType=VARCHAR},
+      </if>
+      <if test="acckind != null">
+        acckind = #{acckind,jdbcType=VARCHAR},
+      </if>
+      <if test="comcode != null">
+        comcode = #{comcode,jdbcType=CHAR},
+      </if>
+      <if test="comname != null">
+        comname = #{comname,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredname != null">
+        insuredname = #{insuredname,jdbcType=VARCHAR},
+      </if>
+      <if test="damagedate != null">
+        damagedate = #{damagedate,jdbcType=DATE},
+      </if>
+      <if test="startdate != null">
+        startdate = #{startdate,jdbcType=DATE},
+      </if>
+      <if test="enddate != null">
+        enddate = #{enddate,jdbcType=DATE},
+      </if>
+      <if test="treatyid != null">
+        treatyid = #{treatyid,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionno != null">
+        sectionno = #{sectionno,jdbcType=VARCHAR},
+      </if>
+      <if test="treatyname != null">
+        treatyname = #{treatyname,jdbcType=VARCHAR},
+      </if>
+      <if test="treatytype != null">
+        treatytype = #{treatytype,jdbcType=VARCHAR},
+      </if>
+      <if test="accperiod != null">
+        accperiod = #{accperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="repolicyno != null">
+        repolicyno = #{repolicyno,jdbcType=VARCHAR},
+      </if>
+      <if test="recertifyno != null">
+        recertifyno = #{recertifyno,jdbcType=VARCHAR},
+      </if>
+      <if test="drcertifyno != null">
+        drcertifyno = #{drcertifyno,jdbcType=VARCHAR},
+      </if>
+      <if test="riskunitcode != null">
+        riskunitcode = #{riskunitcode,jdbcType=VARCHAR},
+      </if>
+      <if test="yourref != null">
+        yourref = #{yourref,jdbcType=VARCHAR},
+      </if>
+      <if test="yourrep != null">
+        yourrep = #{yourrep,jdbcType=VARCHAR},
+      </if>
+      <if test="facflag != null">
+        facflag = #{facflag,jdbcType=VARCHAR},
+      </if>
+      <if test="reinstype != null">
+        reinstype = #{reinstype,jdbcType=VARCHAR},
+      </if>
+      <if test="reinscode != null">
+        reinscode = #{reinscode,jdbcType=VARCHAR},
+      </if>
+      <if test="reinsname != null">
+        reinsname = #{reinsname,jdbcType=VARCHAR},
+      </if>
+      <if test="paycode != null">
+        paycode = #{paycode,jdbcType=VARCHAR},
+      </if>
+      <if test="payname != null">
+        payname = #{payname,jdbcType=VARCHAR},
+      </if>
+      <if test="uwyear != null">
+        uwyear = #{uwyear,jdbcType=VARCHAR},
+      </if>
+      <if test="classcode != null">
+        classcode = #{classcode,jdbcType=VARCHAR},
+      </if>
+      <if test="riskcode != null">
+        riskcode = #{riskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sharerate != null">
+        sharerate = #{sharerate,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyorig != null">
+        currencyorig = #{currencyorig,jdbcType=VARCHAR},
+      </if>
+      <if test="balanceorig != null">
+        balanceorig = #{balanceorig,jdbcType=DECIMAL},
+      </if>
+      <if test="exchrate != null">
+        exchrate = #{exchrate,jdbcType=DECIMAL},
+      </if>
+      <if test="currency != null">
+        currency = #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DECIMAL},
+      </if>
+      <if test="osloss != null">
+        osloss = #{osloss,jdbcType=DECIMAL},
+      </if>
+      <if test="ibnr != null">
+        ibnr = #{ibnr,jdbcType=DECIMAL},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null">
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="sepeflag != null">
+        sepeflag = #{sepeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="settletype != null">
+        settletype = #{settletype,jdbcType=VARCHAR},
+      </if>
+      <if test="makecomcode != null">
+        makecomcode = #{makecomcode,jdbcType=VARCHAR},
+      </if>
+      <if test="accdate != null">
+        accdate = #{accdate,jdbcType=DATE},
+      </if>
+      <if test="associateno != null">
+        associateno = #{associateno,jdbcType=VARCHAR},
+      </if>
+      <if test="creatercode != null">
+        creatercode = #{creatercode,jdbcType=VARCHAR},
+      </if>
+      <if test="createcodename != null">
+        createcodename = #{createcodename,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        createdate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatercode != null">
+        updatercode = #{updatercode,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        updatedate = #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="belongtype != null">
+        belongtype = #{belongtype,jdbcType=VARCHAR},
+      </if>
+      <if test="businessflag != null">
+        businessflag = #{businessflag,jdbcType=VARCHAR},
+      </if>
+      <if test="dealflag != null">
+        dealflag = #{dealflag,jdbcType=VARCHAR},
+      </if>
+      <if test="ppw != null">
+        ppw = #{ppw,jdbcType=VARCHAR},
+      </if>
+      <if test="noduepremium != null">
+        noduepremium = #{noduepremium,jdbcType=DECIMAL},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="dmflag != null">
+        dmflag = #{dmflag,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimefordw != null">
+        createtimefordw = #{createtimefordw,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetimefordw != null">
+        updatetimefordw = #{updatetimefordw,jdbcType=TIMESTAMP},
+      </if>
+      <if test="noduepremiumcny != null">
+        noduepremiumcny = #{noduepremiumcny,jdbcType=DECIMAL},
+      </if>
+      <if test="accpaytime != null">
+        accpaytime = #{accpaytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outwardno != null">
+        outwardno = #{outwardno,jdbcType=VARCHAR},
+      </if>
+      <if test="locationflag != null">
+        locationflag = #{locationflag,jdbcType=VARCHAR},
+      </if>
+      <if test="brkvatcnyb != null">
+        brkvatcnyb = #{brkvatcnyb,jdbcType=DECIMAL},
+      </if>
+      <if test="vatflag != null">
+        vatflag = #{vatflag,jdbcType=VARCHAR},
+      </if>
+      <if test="vatexch != null">
+        vatexch = #{vatexch,jdbcType=DECIMAL},
+      </if>
+      <if test="repremiumcny != null">
+        repremiumcny = #{repremiumcny,jdbcType=DECIMAL},
+      </if>
+      <if test="vatcny != null">
+        vatcny = #{vatcny,jdbcType=DECIMAL},
+      </if>
+      <if test="brkvatcny != null">
+        brkvatcny = #{brkvatcny,jdbcType=DECIMAL},
+      </if>
+      <if test="vatcnyb != null">
+        vatcnyb = #{vatcnyb,jdbcType=DECIMAL},
+      </if>
+      <if test="businesstype != null">
+        businesstype = #{businesstype,jdbcType=VARCHAR},
+      </if>
+      <if test="sendercode != null">
+        sendercode = #{sendercode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where accno = #{accno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.asd.puffin.modules.pojo.Fzacc">
+    update fzacc
+    set opttype = #{opttype,jdbcType=VARCHAR},
+      acctype = #{acctype,jdbcType=VARCHAR},
+      acckind = #{acckind,jdbcType=VARCHAR},
+      comcode = #{comcode,jdbcType=CHAR},
+      comname = #{comname,jdbcType=VARCHAR},
+      insuredname = #{insuredname,jdbcType=VARCHAR},
+      damagedate = #{damagedate,jdbcType=DATE},
+      startdate = #{startdate,jdbcType=DATE},
+      enddate = #{enddate,jdbcType=DATE},
+      treatyid = #{treatyid,jdbcType=VARCHAR},
+      sectionno = #{sectionno,jdbcType=VARCHAR},
+      treatyname = #{treatyname,jdbcType=VARCHAR},
+      treatytype = #{treatytype,jdbcType=VARCHAR},
+      accperiod = #{accperiod,jdbcType=VARCHAR},
+      repolicyno = #{repolicyno,jdbcType=VARCHAR},
+      recertifyno = #{recertifyno,jdbcType=VARCHAR},
+      drcertifyno = #{drcertifyno,jdbcType=VARCHAR},
+      riskunitcode = #{riskunitcode,jdbcType=VARCHAR},
+      yourref = #{yourref,jdbcType=VARCHAR},
+      yourrep = #{yourrep,jdbcType=VARCHAR},
+      facflag = #{facflag,jdbcType=VARCHAR},
+      reinstype = #{reinstype,jdbcType=VARCHAR},
+      reinscode = #{reinscode,jdbcType=VARCHAR},
+      reinsname = #{reinsname,jdbcType=VARCHAR},
+      paycode = #{paycode,jdbcType=VARCHAR},
+      payname = #{payname,jdbcType=VARCHAR},
+      uwyear = #{uwyear,jdbcType=VARCHAR},
+      classcode = #{classcode,jdbcType=VARCHAR},
+      riskcode = #{riskcode,jdbcType=VARCHAR},
+      sharerate = #{sharerate,jdbcType=DECIMAL},
+      currencyorig = #{currencyorig,jdbcType=VARCHAR},
+      balanceorig = #{balanceorig,jdbcType=DECIMAL},
+      exchrate = #{exchrate,jdbcType=DECIMAL},
+      currency = #{currency,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=DECIMAL},
+      osloss = #{osloss,jdbcType=DECIMAL},
+      ibnr = #{ibnr,jdbcType=DECIMAL},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      sepeflag = #{sepeflag,jdbcType=VARCHAR},
+      settletype = #{settletype,jdbcType=VARCHAR},
+      makecomcode = #{makecomcode,jdbcType=VARCHAR},
+      accdate = #{accdate,jdbcType=DATE},
+      associateno = #{associateno,jdbcType=VARCHAR},
+      creatercode = #{creatercode,jdbcType=VARCHAR},
+      createcodename = #{createcodename,jdbcType=VARCHAR},
+      createdate = #{createdate,jdbcType=TIMESTAMP},
+      updatercode = #{updatercode,jdbcType=VARCHAR},
+      updatedate = #{updatedate,jdbcType=TIMESTAMP},
+      belongtype = #{belongtype,jdbcType=VARCHAR},
+      businessflag = #{businessflag,jdbcType=VARCHAR},
+      dealflag = #{dealflag,jdbcType=VARCHAR},
+      ppw = #{ppw,jdbcType=VARCHAR},
+      noduepremium = #{noduepremium,jdbcType=DECIMAL},
+      flag = #{flag,jdbcType=VARCHAR},
+      dmflag = #{dmflag,jdbcType=VARCHAR},
+      createtimefordw = #{createtimefordw,jdbcType=TIMESTAMP},
+      updatetimefordw = #{updatetimefordw,jdbcType=TIMESTAMP},
+      noduepremiumcny = #{noduepremiumcny,jdbcType=DECIMAL},
+      accpaytime = #{accpaytime,jdbcType=TIMESTAMP},
+      outwardno = #{outwardno,jdbcType=VARCHAR},
+      locationflag = #{locationflag,jdbcType=VARCHAR},
+      brkvatcnyb = #{brkvatcnyb,jdbcType=DECIMAL},
+      vatflag = #{vatflag,jdbcType=VARCHAR},
+      vatexch = #{vatexch,jdbcType=DECIMAL},
+      repremiumcny = #{repremiumcny,jdbcType=DECIMAL},
+      vatcny = #{vatcny,jdbcType=DECIMAL},
+      brkvatcny = #{brkvatcny,jdbcType=DECIMAL},
+      vatcnyb = #{vatcnyb,jdbcType=DECIMAL},
+      businesstype = #{businesstype,jdbcType=VARCHAR},
+      sendercode = #{sendercode,jdbcType=VARCHAR}
+    where accno = #{accno,jdbcType=VARCHAR}
+  </update>
+</mapper>

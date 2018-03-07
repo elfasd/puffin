@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.asd.puffin.modules.mapper
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:informix-sqli://10.10.68.22:10001/reinsop_kf:informixserver=test3;NEWCODESET=gbk,8859-1,819
+      name: reinsopdb
+      username: reinsop
+      password: piccreinsop
+      driver-class-name: com.informix.jdbc.IfxDriver
+      filters: stat
+      maxActive: 50
+      initialSize: 2
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      testWhileIdle: true
+      validationQuery: select count(*) from systables
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
