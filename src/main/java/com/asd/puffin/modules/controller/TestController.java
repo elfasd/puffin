@@ -14,7 +14,7 @@ public class TestController {
     @RequestMapping("/demo")
     public String test(){
 
-        System.out.println("qqq");
+        System.out.println("qqq1");
         testService.test();
         return "QQQ";
     }
