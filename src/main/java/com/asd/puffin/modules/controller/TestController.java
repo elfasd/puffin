@@ -16,7 +16,7 @@ public class TestController {
 
         System.out.println("qqq");
         testService.test();
-        return "asd";
+        return "QQQ";
     }
 
 
